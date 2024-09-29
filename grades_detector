@@ -1,0 +1,75 @@
+//program to get the standard grade
+//note: the grades only fits Cairo University at that time
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int mark;
+	cout << "Please enter the Mark\n";
+	cin >> mark;
+	if (mark > 95)
+	{
+		cout << "A+\n";
+	}
+	else if (mark == 95)
+	{
+		cout << "A\n";
+	}
+	else if ((mark < 95) && (mark >= 90))
+	{
+		cout << "A-\n";
+	}
+	else if ((mark < 90) && (mark > 85))
+	{
+		cout << "B+\n";
+	}
+	else if (mark == 85)
+	{
+		cout << "B\n";
+	}
+	else if ((mark < 85) && (mark >= 80))
+	{
+		cout << "B-\n";
+	}
+	else if ((mark < 80) && (mark > 75))
+	{
+		cout << "C+\n";
+	}
+	else if (mark == 75)
+	{
+		cout << "C\n";
+	}
+	else if ((mark < 75) && (mark >= 70))
+	{
+		cout << "C-\n";
+	}
+	else if ((mark < 70) && (mark > 65))
+	{
+		cout << "D+\n";
+	}
+	else if (mark == 65)
+	{
+		cout << "D\n";
+	}
+	else if ((mark < 65) && (mark >= 60))
+	{
+		cout << "D-\n";
+	}
+	else if ((mark < 60) && (mark > 55))
+	{
+		cout << "E+\n";
+	}
+	else if (mark == 55)
+	{
+		cout << "E\n";
+	}
+	else if ((mark < 55) && (mark >= 50))
+	{
+		cout << "E-\n";
+	}
+	else
+	{
+		cout << "F\n";
+	}
+}
