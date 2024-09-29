@@ -1,0 +1,127 @@
+// File: CS112_A2_T3_Section3_20230367_20230298_20230219
+// Purpose: Fraction calculator in C++, input should be (numerator/denominator operation numerator/denominator)
+//          (/denominator) is optional.
+// Authors: Mahmoud Ibraheem Mohamed, Section: 3
+//        : Loay Tarek Mostafa,       Section: 3
+//        : Abdelrahman Nabil Hassan, Section: 3
+// Emails: 11410120230367@stud.cu.edu.eg
+//       : loaytareq44@gmail.com
+//       : 20230219@stud.fci-cu.edu.eg
+// ID1: 20230367 – validate input and extract numbers from it
+// ID2: 20230298 – Simplify output
+// ID3: 20230219 – Mathematical operation
+
+#include <iostream>
+#include <regex>
+
+using namespace std;
+
+// function calculates the greatest common divisor
+int gcd(int a, int b)
+{
+    return b == 0 ? a : gcd(b, a%b);
+}
+
+int main() {
+    // loops until the input is valid or "Exit" to exit loop
+    bool input_error = true;
+    while (input_error) {
+        input_error = false;
+        //  numerator1, denominator1 = 1, numerator2, denominator2 = 1;
+        int numbers [4] = {1, 1, 1, 1}, index = 0;
+        string problem, part;
+        char operation = '\0';
+        bool space_found = false;
+        // Take input from user
+        cout << "Please enter a rational number problems (or exit):" << endl;
+        getline(cin, problem);
+        // Checks if user wants to exit
+        if (regex_match(problem, regex("[Ee][Xx][Ii][Tt]"))) {
+            cout << "Thank you for using our rational number calculator!";
+            return 0;
+        }
+        // Check if input is valid
+        else if (! regex_match(problem, regex(R"([+-]?(\d+)(?:/[+-]?[1-9]+)? [+/*-]{1} [+-]?(\d+)(?:/[+-]?[1-9]+)?)") ) ) {
+            cout << "ERROR: Wrong input!" << endl;
+            input_error = true;
+            continue;
+        }
+        // Algorithm for assigning fraction as integer in form of numerator/denominator.
+        // After reading a -ve sign or a number assign it in a variable named "part".
+        // After every space or '/' assign number in the array from "part" then resets it.
+        // It also checks operation that will be held.
+        for (int i = 0; i < problem.length(); ++i) {
+            if (isspace(problem[i]) and !space_found) {
+                space_found = true;
+                if (! part.empty()) {
+                    numbers[index++] = stoi(part);
+                    // in case if user inputs an integer not a fraction on the right side of the operation
+                    if (index == 1) {
+                        index++;
+                    }
+                    part = "";
+                }
+            } else if ((isdigit(problem[i]) or problem[i] == '-') and !space_found) {
+                part.push_back(problem[i]);
+                space_found = false;
+            } else if (space_found) {
+                space_found = false;
+                if (operation != '\0') {
+                    continue;
+                }
+                switch (problem[i++]) {
+                    case '*':
+                        operation = '*';
+                        break;
+                    case '+':
+                        operation = '+';
+                        break;
+                    case '-':
+                        operation = '-';
+                        break;
+                    case '/':
+                        operation = '/';
+                        break;
+                }
+            } else if (problem[i] == '/') {
+                numbers[index++] = stoi(part);
+                part = "";
+            }
+        }
+        if (! part.empty()) {
+            numbers[index] = stoi(part);
+        }
+        // Mathematical operation
+        int upper, lower;
+        if (operation == '/')
+        {
+            upper = numbers[0] * numbers[3];
+            lower = numbers[1] * numbers[2];
+        }
+        else if (operation == '*')
+        {
+            upper = numbers[0] * numbers[2];
+            lower = numbers[1] * numbers[3];
+        }
+        else if (operation == '+')
+        {
+            upper = numbers[0] * numbers[3] + numbers[1] * numbers[2];
+            lower = numbers[1] * numbers[3];
+        }
+        //minus operation
+        else
+        {
+            upper = numbers[0] * numbers[3] - numbers[1] * numbers[2];
+            lower = numbers[1] * numbers[3];
+        }
+        // Simplify output
+        int divisor = gcd(lower, upper);
+        upper /= divisor;
+        lower /= divisor;
+        if (lower == 1)
+            cout << upper << endl;
+        else
+            cout << upper << "/" << lower << endl;
+    }
+    return 0;
+}
