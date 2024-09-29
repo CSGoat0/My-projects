@@ -1,0 +1,23 @@
+//program to get the value of pi/4
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	// num is the user input
+	int num;
+	cin >> num;
+	// sum here is the start value before addition
+	double sum = 1;
+	// n is the number added to the Denominator
+	int n = 2;
+	//op is the operation will be done
+	double op;
+	for (int i = 1; i < num; i++)
+	{
+		op = pow(-1, i) / (1 + n);
+		n = n + 2;
+		sum += op;
+	}
+	cout << sum << endl;
+}
