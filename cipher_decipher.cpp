@@ -1,16 +1,6 @@
-// FCAI – Structured Programming – 2024 - Assignment 2 - Task 4
-// Program name: CS112_A2_T4_Section3_20230367_20230298_20230219.cpp
 // Program description: Program that Ciphers and Decipher text using multiple algorithms in C++
 // Last Modification Date: 18/03/2024
-// Emails: 11410120230367@stud.cu.edu.eg
-//       : loaytareq44@gmail.com
-//       : 20230219@stud.fci-cu.edu.eg
-// Author 1: Mahmoud Ibraheem Mohamed, ID: 20230367, Section: 3
-// Author 2: Loay Tarek Mostafa,       ID: 20230298, Section: 3
-// Author 3: Abdelrahman Nabil Hassan, ID: 20230219, Section: 3
-// Who did what: 5,6,7,menu By: Mahmoud Ibraheem
-//               0,1,2,9    By: Loay Tarek
-//               3,4,8      By: Abdelrahman Nabil
+// Author: Abdelrahman Nabil Hassan, ID: 20230219, Section: 3
 
 #include <bits/stdc++.h>
 
