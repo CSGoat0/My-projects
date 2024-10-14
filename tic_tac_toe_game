@@ -1,7 +1,5 @@
 //Program: tic tac toe game, player 1 can add odd numbers, player two can add even numbers (include 0), the player who complete 15 in a raw, colomn or diagonal wins.
 //Author: Abdelrahman Nabil Hassan
-//ID: 20230219
-//version: My first version, with c++
 //Date: 29 / 2 / 2023
 
 #include<iostream>
