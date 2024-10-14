@@ -1,14 +1,5 @@
-// Authors: Mahmoud Ibraheem Mohamed, Section: 3
-//        : Loay Tarek Mostafa,       Section: 3
-//        : Abdelrahman Nabil Hassan, Section: 3
-// Emails: 11410120230367@stud.cu.edu.eg
-//       : loaytareq44@gmail.com
-//       : 20230219@stud.fci-cu.edu.eg
-// ID1: 20230367 – Filter 3,6,9,12,15,18 and Extra 1,2
-// ID2: 20230298 – Filter 2,4,5,8,11,14,17
-// ID3: 20230219 – Filter 1,4,7,10,13,16
-
-//GitHub repo link: https://github.com/LoayTarek5/Assingment_3
+// Author: Abdelrahman Nabil Hassan
+// Project: Mini Photoshop
 
 #include <bits/stdc++.h>
 #include "Lib/Image_Class.h"
