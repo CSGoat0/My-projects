@@ -1,7 +1,5 @@
-# File: CS112_A1_T2_Game1_20230219.py.
 # Purpose: The player who reaches 100 first wins
 # Author: Abdelrahman Nabil
-# ID: 20230219
 
 print("***** Welcome to our game! *****\n\n")
 print("Our rules is very easy, the first player who reaches 100 wins.\n")
