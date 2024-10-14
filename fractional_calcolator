@@ -1,15 +1,6 @@
-// File: CS112_A2_T3_Section3_20230367_20230298_20230219
 // Purpose: Fraction calculator in C++, input should be (numerator/denominator operation numerator/denominator)
 //          (/denominator) is optional.
-// Authors: Mahmoud Ibraheem Mohamed, Section: 3
-//        : Loay Tarek Mostafa,       Section: 3
-//        : Abdelrahman Nabil Hassan, Section: 3
-// Emails: 11410120230367@stud.cu.edu.eg
-//       : loaytareq44@gmail.com
-//       : 20230219@stud.fci-cu.edu.eg
-// ID1: 20230367 – validate input and extract numbers from it
-// ID2: 20230298 – Simplify output
-// ID3: 20230219 – Mathematical operation
+// Author: Abdelrahman Nabil
 
 #include <iostream>
 #include <regex>
